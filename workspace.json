@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "csreactapp": "apps/csreactapp",
+    "csreactapp-e2e": "apps/csreactapp-e2e"
+  }
+}
