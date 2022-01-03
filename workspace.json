@@ -2,9 +2,7 @@
   "version": 2,
   "projects": {
     "csreactapp": "apps/csreactapp",
-    "csreactapp-e2e": "apps/csreactapp-e2e",
     "newreactapp": "apps/newreactapp",
-    "newreactapp-e2e": "apps/newreactapp-e2e",
     "ui": "libs/ui",
     "ui-atoms": "libs/ui-atoms"
   }

@@ -8,6 +8,7 @@ const StyledUiAtoms = styled.div`
 `;
 
 export function UiAtoms(props: UiAtomsProps) {
+  console.log('UiAtoms component')
   return (
     <StyledUiAtoms>
       <h1>Welcome to UiAtoms!</h1>
@@ -15,4 +16,3 @@ export function UiAtoms(props: UiAtomsProps) {
   );
 }
 
-export default UiAtoms;
