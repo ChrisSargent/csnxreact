@@ -1,0 +1,73 @@
+{
+  "root": "apps/newreactapp",
+  "sourceRoot": "apps/newreactapp/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/newreactapp",
+        "index": "apps/newreactapp/src/index.html",
+        "baseHref": "/",
+        "main": "apps/newreactapp/src/main.tsx",
+        "polyfills": "apps/newreactapp/src/polyfills.ts",
+        "tsConfig": "apps/newreactapp/tsconfig.app.json",
+        "assets": [
+          "apps/newreactapp/src/favicon.ico",
+          "apps/newreactapp/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/newreactapp/src/environments/environment.ts",
+              "with": "apps/newreactapp/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "newreactapp:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "newreactapp:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/newreactapp/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/newreactapp"],
+      "options": {
+        "jestConfig": "apps/newreactapp/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
